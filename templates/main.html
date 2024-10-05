@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+Bosh Sahifa
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h2 class="custom-heading">So'ngi maqolalar</h2>
+        <div class="row">  <!-- Yonma-yon ma'lumotlar uchun grid boshlanishi -->
+            {% for post in object_list %}
+                <div class="col-md-4">  <!-- Har bir karta 4 ustun egallaydi -->
+                    <div class="card mb-4 shadow-sm">  <!-- Karta uchun soyali effekt -->
+                        {% if post.photo %}  <!-- Rasm bo'lsa, ko'rsatilsin -->
+                            <img src="{{ post.photo.url }}" alt="{{ post.title }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.title }}</h5>
+                            <p> <small class="text-muted"> Character: {{post.body|truncatewords:15}}</p>
+                            <p>Age : {{post.age}} </small> </p>
+                            <small>
+                                <a class="more-link btn btn-primary" href="{{ post.get_absolute_url }}">Read More</a>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>  <!-- Grid tugashi -->
+    {% else %}
+    <div class=".body">
+        <h2 class="emoji">🌙</h2>
+        <h2>You are not logged in</h2>
+    </div>
+    <style>
+    h2 {
+        margin-bottom: 20px;
+        color : white;
+    }
+</style>   
+    {% endif %}
+{% endblock %}

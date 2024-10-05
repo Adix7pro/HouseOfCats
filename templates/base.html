@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content = 'width-device-width, initial-scale=1'>
+    <title>{% block title %}
+            World Cats
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integri -"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuC0mLASJC" crossorigin "anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("{% static 'background.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            font-family: Arial, sans-serif;
+            box-shadow: inset 0 0 500px rgba(0.5, 0.5, 0.5, 0.5);
+        }</style>
+</head>
+<body>
+    <nav class="navbar shadow navbar-expand-lg navbar-light bg-light">
+        <div class="container ">
+            <a class="navbar-brand" href="/">House of Cats</a>
+            <div class="navbar-collapse" id="navbarNav">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="/">Bosh Sahifa</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'posts:create' %}">Post yozish</a>
+                                    </li>
+                                    <li>
+                                        {% if user.is_authenticated %}
+                                        <div class="dropdown">
+                                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                {{ user.username | title }}
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <form action="{% url 'logout' %}" method="post">
+                                                    {% csrf_token %}
+                                                    <button type="submit" class="dropdown-item">Log Out</button>
+                                                </form>
+                                            </li>
+                                              <li><form action="{% url 'password_change' %}" method="post">
+                                                {% csrf_token %}
+                                                <button type="submit" class="dropdown-item">Change Password</button>
+                                            </form></li>
+                                            <li><form action="{% url 'password_reset' %}" method="post">
+                                                {% csrf_token %}
+                                                <button type="submit" class="dropdown-item">Forgot Password</button>
+                                            </form></li>
+                                            </ul>
+                                        </div>
+                                        {% else %}
+                                        <div class="dropdown">
+                                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Sign Up
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <form action="{% url 'signup' %}" method="post">
+                                                    {% csrf_token %}
+                                                    <button type="submit" class="dropdown-item">Sign Upp</button>
+                                                </form>
+                                            </li>
+                                              <li><form action="{% url 'password_change' %}" method="post">
+                                                {% csrf_token %}
+                                                <button type="submit" class="dropdown-item">Change Password</button>
+                                            </form></li>
+                                            <li><form action="{% url 'password_reset' %}" method="post">
+                                                {% csrf_token %}
+                                                <button type="submit" class="dropdown-item">Forgot Password</button>
+                                            </form></li>
+                                            <li><form action="{% url 'login' %}" method="post">
+                                                {% csrf_token %}
+                                                <button type="submit" class="dropdown-item">Log In</button>
+                                            </form></li>
+                                            </ul>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" >{% block content %}{% endblock %}</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="
+    sha384-MrcW6ZMFY1zcLA8N1+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</body>
+</html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<header >
+    <h2>Education</h2>
+      <div class="education">
+          <h3 class="educations_institutions">Bacalavr in Telecommunication Technology (Sep 2022-May 2026)</h3>
+          <p>
+              Tashkent Informational Technology Universitet
+          </p>
+          <p>
+              <i>
+                  Total GPA : #
+              </i>
+          </p>
+      </div>
+    <p>
+        <a href="https://www.linkedin.com/in/adham-choriyev-a43959288/" target="_blank">
+          LinkedIn
+        <i class="bi bi-linkedin"></i>
+        </a> 
+        <a href="mailto:adhamchoriyev234@gmail.com">
+          <i class="bi bi-envelope"></i> adhamchoriyev234@gmail.com
+        </a>
+        <a href="https://t.me/Adham_AI" target="_blank">
+            <i class="bi bi-telegram"></i> Adham_AI
+        </a>
+        <a href="https://github.com/AdiX7pro" target="_blank">
+            <i class="bi bi-github"></i> AdhamChoriyev | AdX7pro
+        </a>
+      </p>
+  </header>
+  <section>
+      <table>
+          <thead>
+              <tr>
+                  <th>
+                      Technical Scills
+                  </th>
+                  <th>
+                      Personal Scills
+                  </th>
+                  <th>
+                      Language Scills
+                  </th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>
+                      <ul>
+                          <li>
+                              Python Core
+                          </li>
+                          <li>
+                              Python OOP
+                          </li>
+                          <li>
+                              Django
+                          </li>
+                          <li>
+                            Telegram Bot
+                          </li>
+                          <li>
+                              REST API
+                          </li>
+                          <li>
+                              HTML
+                          </li>
+                          <li>
+                              CSS
+                          </li>
+                          <li>
+                              Java Script
+                          </li>
+                          <li>
+                              Bootstrap
+                          </li>
+                      </ul>
+                  </td>
+                  <td>
+                      <ul>
+                          <li>
+                              Discipline
+                          </li>
+                          <li>
+                              Humanity
+                          </li>
+                          <li>
+                            Honestly
+                          </li>
+                      </ul>
+                  <td>
+                  <ul>
+                      <li>
+                          Uzbek
+                      </li>
+                      <li>
+                          English (B2)
+                      </li>
+                  </ul>
+              </td>
+              </tr>
+          </tbody>
+      </table>
+  </section>
+  <footer>
+      <a href="https://t.me/Adham_AI"><b>Contact me</b></a>
+  </footer>
+      </div>

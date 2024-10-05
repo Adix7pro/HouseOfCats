@@ -1,0 +1,172 @@
+.card {
+    border: none;
+    border-radius: 10px;
+}
+
+.card-img-top {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+/* CHARACTER.HTML */
+/* Sarlavha uslubi */
+h2 {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Card konteyneri uchun uslub */
+.card {
+    background-color: #f9f9f9;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Card-body ichidagi matnlar uchun masofa */
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Kichik matn uslublari */
+.text-muted {
+    color: #6c757d;
+}
+
+/* "Update" linki uchun yashil ramka */
+.text-muted a[href*="update"] {
+    color: #28a745;
+    border: 1px solid #28a745;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.text-muted a[href*="update"]:hover {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* "Delete" linki uchun qizil ramka */
+.text-muted a[href*="delete"] {
+    color: #dc3545;
+    border: 1px solid #ff1616;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.text-muted a[href*="delete"]:hover {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* "Posted at" va "Author" uchun matn */
+.card-body p small {
+    display: block;
+    margin-top: 10px;
+    color: #999;
+}
+
+.custom-heading {
+        margin-top: 20px;
+        font-size: 2.5rem;
+        color: #fd0000;
+        text-align: center;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        background-color: rgba(255, 255, 255, 0.8);
+        font-family: 'Times New Roman', sans-serif;
+        padding: 10px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+.body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #ffffff;
+        color: #ecf0f1;
+        font-family: Arial, sans-serif;
+    }
+/* Umumiy orqa fon */
+body {
+    background-color: #2d2d3278; /* Butun sayt uchun kulrang fon */
+    font-family: Arial, sans-serif; /* Shrift */
+    color: #333; /* Matn rangi */
+}
+
+/* Header uchun dizayn */
+header {
+    background-color: #2d2d3278; /* Header foni uchun kulrang */
+    padding: 20px; /* Ichki bo'shliq */
+    border-radius: 5px; /* Yumshoq burchaklar */
+    margin-bottom: 20px; /* Pastki bo'shliq */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soyali effekt */
+}
+
+/* Bo'limlar uchun dizayn */
+section {
+    background-color: #2d2d3278; /* Har bir bo'lim foni uchun oq rang */
+    padding: 15px; /* Ichki bo'shliq */
+    border-radius: 5px; /* Yumshoq burchaklar */
+    margin-bottom: 20px; /* Pastki bo'shliq */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Soyali effekt */
+}
+
+/* Jadval dizayni */
+table {
+    width: 100%; /* Jadvalning kengligi */
+    border-collapse: collapse; /* Chegaralarni birlashtirish */
+}
+
+th, td {
+    padding: 10px; /* Ichki bo'shliq */
+    text-align: left; /* Matnni chap tomonga joylash */
+    border-bottom: 1px solid #ddd; /* Pastki chegara */
+}
+
+/* Footer dizayni */
+footer {
+    text-align: center; /* O'rtaga joylash */
+    margin-top: 20px; /* Yuqoridagi bo'shliq */
+    font-weight: bold; /* Qalin matn */
+}
+
+footer a {
+    text-decoration: none; /* Taglangan matnni olib tashlash */
+    color: #007BFF; /* Rang */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Hoverda taglangan matn */
+}
+
+
+
+/* Havolalar uchun umumiy stil */
+p a {
+    color: white; /* Boshlang'ich rang */
+    text-decoration: none; /* Taglangan matnni olib tashlash */
+    margin-right: 40px; /* Har bir havola o'rtasida masofa */
+    font-size: 18px; /* Havola matni kattaligi */
+    display: inline-flex; /* Ikonka va matnni bir qatorda joylashtirish */
+    align-items: center; /* Matnni ikonka bilan bir chiziqda joylash */
+}
+
+/* Ikonkalar uchun stil */
+p a i {
+    margin-right: 10px; /* Ikonka va matn o'rtasida masofa */
+    font-size: 20px; /* Ikonka kattaligi */
+}
+
+/* Hover (kursor ustida turganda) effekt */
+p a:hover {
+    color: #007bff; /* Kursor ustida bo'lganda ko'k rang */
+}
+
+p a i:hover {
+    color: #0056b3; /* Ikonka hover qilganda ko'k rangga o'zgaradi */
+}

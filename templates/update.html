@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Tahrirlash - {{post.title}}
+{% endblock %}
+{% block content %}
+    <h2 class="custom-heading" >Tahrirlash - {{post.title}}</h2>
+    <div class="card mt-3 ">
+        <div class="card-body">
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        {{ form.media }}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary">Tasdiqlash</button>
+    </form>
+</div>
+</div>
+{% endblock %}

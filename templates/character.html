@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{post.title}}
+{% endblock %}
+{% block content %}
+    <h2 class="custom-heading" >{{post.title}}</h2>
+    <div class="card mt-3 ">
+        <div class="card-body">
+            {% if post.photo %}  <!-- Rasm bo'lsa, ko'rsatilsin -->
+                <img src="{{ post.photo.url }}" alt="{{ post.title }}" style="width: 100%; height: auto;">
+            {% endif %}
+            {{post.body}}
+            <p> <small class="text-muted"> Posted at: {{post.created}} | Author: {{post.author}} </small> </p>
+            <p> <small class="text-muted"> Character: {{post.body}} | Age : {{post.age}} </small> </p>
+            {% if post.author == request.user %}
+<small class="text-muted">
+<a href="{% url "posts:update" post.id %}">Update</a> |
+<a href="{% url "posts:delete" post.id %}">Delete</a>
+</small>
+{% endif %}
+</div>
+</div>
+{% endblock %}

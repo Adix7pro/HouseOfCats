@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class=".body">
+    <h2 class="emoji">🌙</h2>
+    <h2>Kirish</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Kirish</button>
+    </form>
+</div>
+
+<style>
+
+    .login-container {
+        background: rgba(44, 62, 80, 0.8);
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        width: 300px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        background: #34495e;
+        color: #ecf0f1;
+    }
+
+    button {
+        background: blue;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        color: white;
+        cursor: pointer;
+        width: 100%;
+        transition: background 0.3s ease;
+    }
+
+    button:hover {
+        background: #c0392b; /* Tugma hover effekti */
+    }
+
+    .emoji {
+        font-size: 50px;
+        animation: bounce 1s infinite; /* Animatsiya */
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-10px);
+        }
+        60% {
+            transform: translateY(-5px);
+        }
+    }
+</style>
+{% endblock %}
